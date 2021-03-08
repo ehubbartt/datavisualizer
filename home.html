@@ -28,3 +28,51 @@
       </ul>
     </nav>
   </div>
+
+  <section>
+    <h2>Treaps</h2>
+    <p>
+      Let us begin with a normal Bianary Search Tree we learned <a href = "https://edstem.org/us/courses/3021/lessons/7191/slides/34500">in class</a>,
+       where each node contain a <span class="orange">value</span>, and the nodes are linked with lesser values being
+       left children, and greater values being right children. This structure works great with bianary
+       search, as when it is properly made it allows for data to be found in Log(n) steps.
+    </p>
+    <img src="imgs/basicBST.jpg" alt="A BST">
+
+    <p>
+      These work great until you try to enter your data sequentially i.e. in acending or decending order.
+       When this happens, the tree becomes very long, and you lose any advantages of a BST, as you will
+       potentially have to traverse through <em>every</em> element.
+    </p>
+    <img src="imgs/badBST.jpg" alt="A bad BST">
+
+    <p>
+      One approach to solve this problem is to add a second value to each node, a <span class="purple">priority</span>.
+      The structure will still follow the BST rules with regard to the <span class="orange">value</span>,
+      but it will also follow heap rules with regard to the <span class="purple">priority</span>, so
+      nodes will always have a lower <span class="purple">priority</span> than any of its children.
+    </p>
+    <img src="imgs/basicTreap.jpg" alt="A Treap">
+
+    <p>
+      What we have created now is a combination of a <em>tree</em> and a <em>heap</em>, hence its name, a <strong>treap</strong>.
+      These invariants are enforced anytime a new peice of data is added through a series of rotations,
+      very similar to how an AVL tree works, as we learned <a href = "https://edstem.org/us/courses/3021/lessons/7200/slides/37543">here</a>.
+      But how do we decide the <span class="purple">priorities</span> in order to make the tree more
+      balanced? We do that <em>randomly</em>! The reason why we do this has to do with probability.
+      A normal BST reaches its worse-case senario when data is inserted in order, but with these new invariants,
+      both the data being entered, and the randomly assigned priority would have to be in sequential order,
+      something that has a very low probability. What this means is that while there is still a chance we
+      see the worse-case senario, the odds become very low. But even in that unlikely event, the structure
+      has a chance to balance itself out whenever a new insertion is made!
+    </p>
+    <img src="imgs/treapRebalancing.jpg" alt="A Treap">
+
+    <p>
+      But perhaps the best part about this approach is that because it still builds off all the invariants
+      of a default BST tree, adding these new rules will only ever make the tree more bushy, it will never
+      make it worse! As you hopefully can see, Treaps are able to build off the materials we learned in class,
+      and use randomness in order to improve upon them.
+    </p>
+  </section>
+</body>
