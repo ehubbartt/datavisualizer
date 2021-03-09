@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Helvetica', sans-serif;
+}
+
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+section {
+  height: 100vh;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: darkorchid;
+}
+
+section h2 {
+  opacity: 1;
+  transition: opacity 5000ms;
+}
+
+section.is-visible h2 {
+  opacity: 1;
+}
+
+section:nth-child(2n) {
+  background-color: turquoise;
+}
+
+section:nth-child(3n) {
+  background-color: tomato;
+}
+
+#card {
+  background-color: whitesmoke;
+  border-radius: 5px;
+  height: 80vh;
+  width: 90vw;
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.384);
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50;
+}
+
+p {
+  padding: 20px;
+}
+
+@supports (scroll-snap-type: y mandatory) {
+  .scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+  }
+
+  section {
+    height: 100vh;
+    scroll-snap-align: center;
+  }
+}
