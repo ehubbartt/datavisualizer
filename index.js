@@ -96,4 +96,5 @@
   function id(idName) {
     return document.getElementById(idName);
   }
+
 })();
