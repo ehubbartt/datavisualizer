@@ -60,7 +60,7 @@
           left children, and greater values being right children. This structure works great with bianary
           search, as when it is properly made it allows for data to be found in Log(n) steps.
         </p>
-        <img src="imgs/basicBST.jpg" alt="A BST" class='diagram'>
+        <img src="imgs/basicBST.png" alt="A BST" class='diagram'>
       </div>
     </section>
     <section data-index="2">
@@ -70,7 +70,7 @@
           When this happens, the tree becomes very long, and you lose any advantages of a BST, as you will
           potentially have to traverse through <em>every</em> element.
         </p>
-        <img src="imgs/badBST.jpg" alt="A bad BST" class='diagram'>
+        <img src="imgs/badBST.png" alt="A bad BST" class='diagram'>
 
 
       </div>
@@ -84,7 +84,7 @@
           but it will also follow heap rules with regard to the <span class="purple">priority</span>, so
           nodes will always have a lower <span class="purple">priority</span> than any of its children.
         </p>
-        <img src="imgs/basicTreap.jpg" alt="A Treap" class='diagram'>
+        <img src="imgs/basicTreap.png" alt="A Treap" class='diagram'>
 
       </div>
     </section>
@@ -104,7 +104,7 @@
           see the worse-case senario, the odds become very low. But even in that unlikely event, the structure
           has a chance to balance itself out whenever a new insertion is made!
         </p>
-        <img src="imgs/treapRebalancing.jpg" alt="A Treap" class='diagram'>
+        <img src="imgs/treapRebalancing.png" alt="A Treap" class='diagram'>
         <p>
           But perhaps the best part about this approach is that because it still builds off all the invariants
           of a default BST tree, adding these new rules will only ever make the tree more bushy, it will never
@@ -133,7 +133,7 @@
           to find a node, we would first need to traverse through all the nodes before it, giving us a worse-case
           runtime of O(N).
         </p>
-        <img src="imgs/linkedList.jpg" alt="A BST">
+        <img src="imgs/linkedList.png" alt="A BST">
       </div>
     </section>
     <section data-index="2">
@@ -145,7 +145,7 @@
           In this case, we can compare the number we are looking for with 48. If it is greater, than we can start where
           the pointer is, without having to traverse through all the previous nodes!
         </p>
-        <img src="imgs/linkedListPointer.jpg" alt="A BST">
+        <img src="imgs/linkedListPointer.png" alt="A BST">
       </div>
     </section>
     <section data-index="3">
@@ -155,7 +155,7 @@
           pointers in a parallel linked list! This gives us several spots where we can skip through our linked list,
           creating a <strong>Skip List</strong>!
         </p>
-        <img src="imgs/skipList.jpg" alt="A BST">
+        <img src="imgs/skipList.png" alt="A BST">
       </div>
     </section>
     <section data-index="4">
@@ -166,7 +166,7 @@
           below is the same as the one above, notice how the nodes with pointers are taller than the others. It is also worth
           noting that any node in a linked list must be in the list below it.
         </p>
-        <img src="imgs/skipListTwo.jpg" alt="A BST">
+        <img src="imgs/skipListTwo.png" alt="A BST">
       </div>
     </section>
     <section data-index="5">
@@ -176,7 +176,7 @@
           becomes very powerful as we work with larger and larger data sets, as each level allows us to skip lots of traversals
           on the level below.
         </p>
-        <img src="imgs/skipListTall.jpg" alt="A BST">
+        <img src="imgs/skipListTall.png" alt="A BST">
       </div>
     </section>
     <section data-index="6">
@@ -189,7 +189,7 @@
           with the value of 51. The green arrows are where we traverse through a list, the red are where we went to far, and
           had to go back and down a level.
         </p>
-        <img src="imgs/skipListTraverse.jpg" alt="A BST">
+        <img src="imgs/skipListTraverse.png" alt="A BST">
       </div>
     </section>
     <section data-index="7">
@@ -204,7 +204,7 @@
           of it being added to the next list up was 50% of that, (25%). The full odds of each node being on the level it
           was is shown below.
         </p>
-        <img src="imgs/skipListOdds.jpg" alt="A BST">
+        <img src="imgs/skipListOdds.png" alt="A BST">
         <p>
           While each new node has the potential to be on a theoretically infinite number of skip lists, because of
           the decreasing probability of each level, it is more likely that the highest number of skip lists we will
@@ -235,7 +235,7 @@
           or you just want to work with trees. That is what a <strong>Zip Tree</strong> is, a skip list, in Tree
           form! To begin, let us look at a Skip List.
         </p>
-        <img src="imgs/skipListSmall.jpg" alt="A BST">
+        <img src="imgs/skipListSmall.png" alt="A BST">
       </div>
     </section>
     <section data-index="2">
@@ -248,7 +248,7 @@
           we just order the nodes like a normal BST, but with the added invariant that each node's <span class="red">rank</span>
           must be greater than it's left child, and equal to or greater than its right child. That's it!
         </p>
-        <img src="imgs/zipTree.jpg" alt="A BST">
+        <img src="imgs/zipTree.png" alt="A BST">
         <p>
           The concept behind Zip Trees is very similar to Treaps. They take the existing BST structure, and use randomness
           to make the chance of the tree encountering its worse-case scenario very small. Also notice how the top-most nodes
