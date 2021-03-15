@@ -134,7 +134,7 @@ button {
   box-shadow: 1px 1px 1px rgba(46, 46, 46, 0.438);
 }
 
-#interactive-header {
+#interactive-header, #home-header {
   color: #30323D;
   margin-top:-25vh;
   text-align: left;
