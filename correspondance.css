@@ -29,4 +29,16 @@ margin-top: 50px;
   flex: 40vw;
 }
 
+#buttons {
+  display: inline-block;
+}
+
+#paragraph-text {
+  width: 35vw;
+  height: 25vh;
+}
+
+.hidden {
+  display: none;
+}
 

@@ -1,12 +1,31 @@
 (function () {
   window.addEventListener('load', init);
   let skipList = new Map();
-  let skipListArray = [];
   let size = 0;
-  let isNum = false;
+  let isNum = true;
 
   function init() {
     qs('.button').addEventListener('click', addToList);
+    id('type').addEventListener('click',changeType)
+  }
+
+  function changeType() {
+    let typeText = id('type');
+    let toggleText = id('type1');
+    let input = id('input1');
+    if(isNum) {
+      typeText.innerHTML = "Word";
+      toggleText.innerHTML = "\"Word\"";
+      input.type = 'text';
+      isNum = false;
+    } else {
+      typeText.innerHTML = "Number";
+      toggleText.innerHTML = "\"Number\"";
+      input.type = 'number'
+      isNum = true;
+    }
+    removeAllChildNodes(id('container'));
+    skipList.clear();
   }
 
   function random() {
@@ -30,14 +49,13 @@
   }
 
   function addToList() {
-    let num = id('input1').value;
+    let value = id('input1').value;
     let height = setHeight(1);
     if(isNum) {
-      num = parseInt(num);
+      value = parseInt(value);
     }
-    if(!skipList.has(num)) {
-      skipList.set(num, height);
-      skipListArray[size] = num;
+    if(!skipList.has(value)) {
+      skipList.set(value, height);
       size++;
       loadSkipList();
     } else {
@@ -46,10 +64,14 @@
   }
 
   function loadSkipList() {
-    id('array').innerHTML = "[" + skipListArray.toString() + "]";
-    let sortedMap = new Map([...skipList].sort(function(a,b) {
+    let sortedMap;
+    if(isNum) {
+    sortedMap = new Map([...skipList].sort(function(a,b) {
       return a[0] - b[0];
      }));
+    } else { 
+      sortedMap = new Map([...skipList].sort());
+    }
     removeAllChildNodes(id('container'));
     sortedMap.forEach(function(height, num) {
       let stack = document.createElement('div');
