@@ -2,30 +2,11 @@
   window.addEventListener('load', init);
   function init() {
     qs('.welcome-button').addEventListener('click', start);
-    let diagramSelections = qsa('.diagram-button');
-    for (let i = 0; i < diagramSelections.length; i++) {
-      diagramSelections[i].addEventListener('click', e => {
-        e.preventDefault();
-        selections(diagramSelections[i].innerHTML);
-      });
-    }
   }
 
   function start() {
     id('wrapper').classList.add('hidden');
-    qs('.scroll-container').classList.remove('hidden');
-  }
-
-  function selections(name) {
-    let sections = qsa('.scroll-container')
-    for(let i = 0; i < sections.length; i++) {
-      if(sections[i].id === name) {
-        console.log('here')
-        sections[i].classList.remove('hidden');
-      } else {
-      sections[i].classList.add('hidden');
-      }
-    }
+    id('whole').classList.remove('hidden');
   }
 
   /**

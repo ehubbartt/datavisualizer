@@ -20,8 +20,11 @@
         <li><a href="home.html">
             <h3>Home</h3>
           </a></li>
+        <li><a href="structures.html">
+            <h3>Structures<h3>
+          </a></li>
         <li><a href="corresondance.html">
-            <h3>corresondance<h3>
+            <h3>Corresondance<h3>
           </a></li>
         <li><a href="interactive.html">
             <h3>Interactive<h3>
@@ -42,223 +45,36 @@
     </div>
   </div>
 
-  <main class="scroll-container hidden" id="Treaps">
-
-    <div id='diagram-selections'>
-      <div class='diagram-button'>Treaps</div>
-      <div class='diagram-button' id='SkipLists'>SkipLists</div>
-      <div class='diagram-button' id='ZipTrees'>ZipTrees</div>
+  <div id="whole" class="hidden">
+    <div id='left' class='side'>
+      <div>
+        <h1 id="welcome-message">Hello, We Are <span id="our-names">Ethan and Zayn</span> and This is Our Project on Isometry and Randomization
+          Algorithms! </h1>
+        <h2>To the Right is Our Motivation For the Project</h2>
+      </div>
     </div>
-
-    <section data-index="1">
-      <div id="card">
-        <h2>Treaps: </h2>
-        <p>
-          Let us begin with a normal Bianary Search Tree we learned <a
-            href="https://edstem.org/us/courses/3021/lessons/7191/slides/34500">in class</a>,
-          where each node contain a <span class="orange">value</span>, and the nodes are linked with lesser values being
-          left children, and greater values being right children. This structure works great with bianary
-          search, as when it is properly made it allows for data to be found in Log(n) steps.
-        </p>
-        <img src="imgs/basicBST.png" alt="A BST" class='diagram'>
+    <div id='right' class='side'>
+      <div id='selectionBar'></div>
+      <div id='screen'>
+        <div id='container'>
+          <p id="motivate">
+            Throughout our time in this course, we have learned many data structures and algorithms that allow for quick and
+            efficient storage and retrieval of information. But, one of the main issues that many beginner programmers face,
+            ourselves included, is the ability to comprehend and create complex data structures. When we first started this class,
+            it seemed there was no small amount of confusion around some structures, and it took a while for people to start
+            understanding and grasping the concepts and implementations presented in class. Using randomized algorithms to create
+            structures is, in our opinion, not just effective, as we will discuss later, but also easier to understand and to
+            create. Creating weight based on randomness is a very simple thing to do that also creates a very balanced and efficient
+            structure, reducing complexity tremendously. Learning about skip lists really fascinated us. Something about the
+            flipping of the coin to determine height of skip lists seemed like such a simple but elegant solution to a very
+            complicated problem, and we saw that it worked very well to bring down runtime. All these structures still are built on
+            structures and techniques we learned in class, they are just able to implement randomness in order to expand and improve
+            on them. In many cases, the end result is much more powerful, and even visually interesting.
+          </p>
+        </div>
       </div>
-    </section>
-    <section data-index="2">
-      <div id="card">
-        <p>
-          These work great until you try to enter your data sequentially i.e. in acending or decending order.
-          When this happens, the tree becomes very long, and you lose any advantages of a BST, as you will
-          potentially have to traverse through <em>every</em> element.
-        </p>
-        <img src="imgs/badBST.png" alt="A bad BST" class='diagram'>
-
-
-      </div>
-    </section>
-    <section data-index="3">
-      <div id="card">
-        <p>
-          One approach to solve this problem is to add a second value to each node, a <span
-            class="purple">priority</span>.
-          The structure will still follow the BST rules with regard to the <span class="orange">value</span>,
-          but it will also follow heap rules with regard to the <span class="purple">priority</span>, so
-          nodes will always have a lower <span class="purple">priority</span> than any of its children.
-        </p>
-        <img src="imgs/basicTreap.png" alt="A Treap" class='diagram'>
-
-      </div>
-    </section>
-    <section data-index="4">
-      <div id="card">
-        <p>
-          What we have created now is a combination of a <em>tree</em> and a <em>heap</em>, hence its name, a
-          <strong>treap</strong>.
-          These invariants are enforced anytime a new peice of data is added through a series of rotations,
-          very similar to how an AVL tree works, as we learned <a
-            href="https://edstem.org/us/courses/3021/lessons/7200/slides/37543">here</a>.
-          But how do we decide the <span class="purple">priorities</span> in order to make the tree more
-          balanced? We do that <em>randomly</em>! The reason why we do this has to do with probability.
-          A normal BST reaches its worse-case senario when data is inserted in order, but with these new invariants,
-          both the data being entered, and the randomly assigned priority would have to be in sequential order,
-          something that has a very low probability. What this means is that while there is still a chance we
-          see the worse-case senario, the odds become very low. But even in that unlikely event, the structure
-          has a chance to balance itself out whenever a new insertion is made!
-        </p>
-        <img src="imgs/treapRebalancing.png" alt="A Treap" class='diagram'>
-        <p>
-          But perhaps the best part about this approach is that because it still builds off all the invariants
-          of a default BST tree, adding these new rules will only ever make the tree more bushy, it will never
-          make it worse! As you hopefully can see, Treaps are able to build off the materials we learned in class,
-          and use randomness in order to improve upon them.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <main class="scroll-container hidden" id="SkipLists">
-
-    <div id='diagram-selections'>
-      <div class='diagram-button'>Treaps</div>
-      <div class='diagram-button'>SkipLists</div>
-      <div class='diagram-button'>ZipTrees</div>
     </div>
-    <section data-index="1">
-      <div id="card">
-        <h2>Skip Lists</h2>
-        <p>
-          For this data structure, we begin with the basic linked list, where every node contains a value,
-          and it its child is the node with the next highest value. This data structure is great if we want
-          to add a new peice of data, beacuse we would only have to change, at most, two connections, as we
-          add the new node in the middle of this chain. The biggest problem with it, however, is that in order
-          to find a node, we would first need to traverse through all the nodes before it, giving us a worse-case
-          runtime of O(N).
-        </p>
-        <img src="imgs/linkedList.png" alt="A BST">
-      </div>
-    </section>
-    <section data-index="2">
-      <div id="card">
-        <p>
-          But what if we add a new pointer, that points at a node in the middle of our chain, and marks what node
-          it points at? Because the nodes are in order, we know that any value that is greater than our pointer
-          is going to be after that node. Therefore, we can use this pointer to <em>skip</em> a portion of our linked list!
-          In this case, we can compare the number we are looking for with 48. If it is greater, than we can start where
-          the pointer is, without having to traverse through all the previous nodes!
-        </p>
-        <img src="imgs/linkedListPointer.png" alt="A BST">
-      </div>
-    </section>
-    <section data-index="3">
-      <div id="card">
-        <p>
-          But we can take this concept even further, by adding more pointers throughout our data, and storing all these
-          pointers in a parallel linked list! This gives us several spots where we can skip through our linked list,
-          creating a <strong>Skip List</strong>!
-        </p>
-        <img src="imgs/skipList.png" alt="A BST">
-      </div>
-    </section>
-    <section data-index="4">
-      <div id="card">
-        <p>
-          We can also depict this structure in the following way, where the rows in this grid represent each linked list.
-          If a column has a box in that row, that means there is a pointer to that node in that skip list. The Skip List
-          below is the same as the one above, notice how the nodes with pointers are taller than the others. It is also worth
-          noting that any node in a linked list must be in the list below it.
-        </p>
-        <img src="imgs/skipListTwo.png" alt="A BST">
-      </div>
-    </section>
-    <section data-index="5">
-      <div id="card">
-        <p>
-          However, we are not just limited to having one skip list, we can also create a skip list, for our skip list! This
-          becomes very powerful as we work with larger and larger data sets, as each level allows us to skip lots of traversals
-          on the level below.
-        </p>
-        <img src="imgs/skipListTall.png" alt="A BST">
-      </div>
-    </section>
-    <section data-index="6">
-      <div id="card">
-        <p>
-          Finally, when we want to search for our data, we start with the highest skip tree, and traverse through it like normal
-          until we reach our value, or we go too far. In the first case, we are all finished, but in the second,
-          we need to go back one node, then down to our next skip list. We continue until we find our value, or pass it on
-          the last level, in which case the data is not in the skip lists. In the visual below, we are looking for the node
-          with the value of 51. The green arrows are where we traverse through a list, the red are where we went to far, and
-          had to go back and down a level.
-        </p>
-        <img src="imgs/skipListTraverse.png" alt="A BST">
-      </div>
-    </section>
-    <section data-index="7">
-      <div id="card">
-        <p>
-          As for how we determain which level each node is on, we can once again use random probability! Whenever we
-          add a new node, we start at the bottom level and give it a 50% chance of staying there, and 50% chance of
-          moving up a level, coninuing until it stays on a level. This is able to distribute the nodes, so that each
-          level has about 50% of the nodes below it, meaning that it skips the other 50% of nodes. So for example,
-          below when we added the '48' node, it went through 3 random rolls before it stayed on a level, so it shows up
-          in all 3 of our linked lists. The chance of it being added to just the bottom list was 50%, and the chance
-          of it being added to the next list up was 50% of that, (25%). The full odds of each node being on the level it
-          was is shown below.
-        </p>
-        <img src="imgs/skipListOdds.png" alt="A BST">
-        <p>
-          While each new node has the potential to be on a theoretically infinite number of skip lists, because of
-          the decreasing probability of each level, it is more likely that the highest number of skip lists we will
-          see is log(N). While the randomness of this structure doesn't make it perfect, it means that each skip List
-          will be able to skip about half of the remaining entries. This is comparable to the BSTs we learned in class,
-          where going to the left or right of a node eliminates half of the remaining possibilities. But these Skip
-          Lists are still able to be easily added, only requiring you to change a few connections and make a few random
-          rolls. This structure also dynamically resizes itself, as the more entries that are added, the more likely it
-          is that we will see a node with a greater height, creating a new skip list. In this way, randomness can be used
-          to create a very powerful data structure.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <main class="scroll-container hidden" id="ZipTrees">
-
-    <div id='diagram-selections'>
-      <div class='diagram-button'>Treaps</div>
-      <div class='diagram-button'>SkipLists</div>
-      <div class='diagram-button'>ZipTrees</div>
-    </div>
-    <section data-index="1">
-      <div id="card">
-        <h2>Zip Trees</h2>
-        <p>
-          For this last data structure, we need to revisit Skip Lists. Let's say you don't like linked lists,
-          or you just want to work with trees. That is what a <strong>Zip Tree</strong> is, a skip list, in Tree
-          form! To begin, let us look at a Skip List.
-        </p>
-        <img src="imgs/skipListSmall.png" alt="A BST">
-      </div>
-    </section>
-    <section data-index="2">
-      <div id="card">
-        <p>
-          When we convert this to a tree, we assign each node its normal value, plus a <span class="red">rank</span>,
-          very similar to what we did with Treaps. This <span class="red">rank</span> is going to be equal to
-          the corresponding 'height' on the Skip List, or equal to x number of successful 50% rolls. So for example,
-          the '39' node had a height of 3 on the Skip List, therefore its <span class="red">rank</span> is 3. Then
-          we just order the nodes like a normal BST, but with the added invariant that each node's <span class="red">rank</span>
-          must be greater than it's left child, and equal to or greater than its right child. That's it!
-        </p>
-        <img src="imgs/zipTree.png" alt="A BST">
-        <p>
-          The concept behind Zip Trees is very similar to Treaps. They take the existing BST structure, and use randomness
-          to make the chance of the tree encountering its worse-case scenario very small. Also notice how the top-most nodes
-          from the Skip Tree form a chain down the top of the Zip Tree, a hint of the correspondence between these structures,
-          that we will explore more here. Again, while this does not guarentee the best-case scenario, because it still follows
-          the BST invariants, it will almost always make the runtime better than a default BST.
-        </p>
-      </div>
-    </section>
-  </main>
+  </div>
 
 
 </body>

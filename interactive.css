@@ -16,8 +16,9 @@ z-index: 0 !important;
   position: absolute;
   min-width: 100vw;
   align-items: flex-end;
-  justify-content: flex-end;
+  justify-content: flex-start;
   backdrop-filter: blur(10px);
+  font-size: 15px;
 }
 
 nav ul {

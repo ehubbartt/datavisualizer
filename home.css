@@ -7,6 +7,7 @@ body {
   background-image: linear-gradient(315deg, #89d4cf 0%, #6e45e1 74%);
   display: flex;
   flex-direction: column;
+  font-size: 20px;
 }
 
 .scroll-container {
@@ -81,6 +82,14 @@ p {
   cursor: pointer;
   justify-content: center;
   align-items: center;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.384);
+}
+
+#motivate {
+  height: 40%;
+  width: 70%;
+  font-size: 20px;
+  margin-right: 5rem;
 }
 
 #diagram-selections {
@@ -88,6 +97,15 @@ p {
   flex-direction: row;
   justify-content: center;
   margin-bottom: -50px;
+}
+
+#welcome-message {
+  width: 35vw;
+  font-size: 40px;
+}
+
+#our-names {
+  color:  #f76079;
 }
 
 @supports (scroll-snap-type: y mandatory) {
