@@ -19,8 +19,8 @@
       input.type = 'text';
       isNum = false;
     } else {
-      typeText.innerHTML = "Number";
-      toggleText.innerHTML = "\"Number\"";
+      typeText.innerHTML = "Integer";
+      toggleText.innerHTML = "\"Integer\"";
       input.type = 'number'
       isNum = true;
     }
