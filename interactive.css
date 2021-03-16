@@ -171,6 +171,7 @@ h3 {
 
 /* For Tablets */
 @media screen and (max-width: 1000px) {
+
   #whole, #welcome{
     flex-direction: column;
   }
