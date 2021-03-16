@@ -88,8 +88,14 @@ p {
 #motivate {
   height: 40%;
   width: 70%;
-  font-size: 20px;
+  font-size: 1.1vw;
   margin-right: 5rem;
+}
+
+#note {
+  position: absolute;
+  color: rgba(128, 128, 128, 0.486);
+  margin-top: 15vh;
 }
 
 #diagram-selections {
