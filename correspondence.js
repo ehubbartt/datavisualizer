@@ -7,7 +7,7 @@
       "Here is a 5 way correspondance between a SkipList, 2-3-4 Tree, ZipTree, RLRB Tree, and a Triple Pivot Quicksort",
       "The shape and connections are the only thing that matter to these structures, the color in diagrams has been added purely to show how these structures line up. All these structures work in a very similar way, and have interesting connections. Perhaps the most suprising is how a Zip Tree is nearly identical to a Right - Leaning Red Black Tree, just one has 'ranks' while the other has colors.",
       "Beyond that, all these trees have an 'upper layer' of sorts, which divides the rest of the values into ranges. We have colored these dividing values, pivots and nodes in blue, and the ranges are the other colors.",
-      "So for example, in all structures 13 and 48 are either pivots, the top nodes, or are on the heighest Skip Tree. Between them, all the values between 13 anad 48 exist in a zone marked in green. This shows how all these structures line up, and have a lot of similarities in how they represent and store data."
+      "So for example, in all structures 13 and 48 are either pivots, the top nodes, or are on the heighest Skip Tree. Between them, all the values between 13 and 48 exist in a zone marked in green. This shows how all these structures line up, and have a lot of similarities in how they represent and store data."
     ]
   }
 
